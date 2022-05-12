@@ -1,6 +1,7 @@
 package com.heinzawaung.moonbet;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,7 @@ public class MainActivity extends Activity {
         Button calculateButton = findViewById(R.id.calculate);
         TextView totalInvestAmount = findViewById(R.id.finalAmount);
         EditText accumulator = findViewById(R.id.accumulate);
+        Button toBasketBall = findViewById(R.id.basketball);
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             private final DecimalFormat decimalFormat = new DecimalFormat("0.00");
@@ -68,6 +70,11 @@ public class MainActivity extends Activity {
                 drawBetAmount.setText(drawX3000);
                 awayBetAmount.setText(awayX3000);
             }
+        });
+
+        toBasketBall.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, BasketballCalculatorActivity.class);
+            startActivity(intent);
         });
     }
 }

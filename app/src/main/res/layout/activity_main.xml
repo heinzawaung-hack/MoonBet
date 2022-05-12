@@ -167,5 +167,13 @@
         android:text="@string/calculate"
         />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="100dp"
+        android:text="@string/basket"
+        android:id="@+id/basketball"/>
+
 
 </LinearLayout>
