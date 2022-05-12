@@ -11,4 +11,6 @@
     <string name="calculate">Calculate</string>
     <string name="amount">Amount</string>
     <string name="app">Final Amount :</string>
+    <string name="accumulator">Bet Amount (100,000) = 1,000 :</string>
+    <string name="two_thousand">1200</string>
 </resources>

@@ -13,6 +13,7 @@ public class MainActivity extends Activity {
     double homeWinOne;
     double drawTwo;
     double awayWinThree;
+    double accumulatorBet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class MainActivity extends Activity {
         TextView calculated = findViewById(R.id.percent);
         Button calculateButton = findViewById(R.id.calculate);
         TextView totalInvestAmount = findViewById(R.id.finalAmount);
+        EditText accumulator = findViewById(R.id.accumulate);
 
         calculateButton.setOnClickListener(new View.OnClickListener() {
             private final DecimalFormat decimalFormat = new DecimalFormat("0.00");
@@ -38,6 +40,7 @@ public class MainActivity extends Activity {
                     homeWinOne = Double.parseDouble(homeWin.getText().toString());
                     drawTwo = Double.parseDouble(draw.getText().toString());
                     awayWinThree = Double.parseDouble(awayWin.getText().toString());
+                    accumulatorBet = Double.parseDouble(accumulator.getText().toString());
                 }catch (NumberFormatException e) {
                     System.out.println("Fuck");
                 }
@@ -49,9 +52,9 @@ public class MainActivity extends Activity {
                 double calculatedPercent = homeWinResult + drawResult + awayWinResult;
                 calculated.setText((decimalFormat.format(calculatedPercent - 100)));
 
-                double homeWinResultOne = homeWinResult * 3000;
-                double drawResultOne = drawResult * 3000;
-                double awayResultOne = awayWinResult * 3000;
+                double homeWinResultOne = homeWinResult * accumulatorBet;
+                double drawResultOne = drawResult * accumulatorBet;
+                double awayResultOne = awayWinResult * accumulatorBet;
 
                 //To show total cost
                 double finalInvest = homeWinResultOne + drawResultOne + awayResultOne;
